@@ -1,19 +1,6 @@
 {
   "entities": [
     {
-      "id": "1",
-      "name": "Entity1",
-      "coordinates": [
-        -5,
-        10
-      ],
-      "labels": [
-        "labelA",
-        "labelB",
-        "labelE"
-      ]
-    },
-    {
       "id": "2",
       "name": "Entity2",
       "coordinates": [
@@ -36,6 +23,169 @@
         "labelC"
       ],
       "id": "3"
+    },
+    {
+      "id": "df24",
+      "name": "Entity1",
+      "coordinates": [
+        "-5",
+        " 10"
+      ],
+      "labels": [
+        "labelA",
+        " labelB",
+        " labelE"
+      ]
+    },
+    {
+      "id": "5634",
+      "name": "",
+      "coordinates": [
+        ""
+      ],
+      "labels": [
+        ""
+      ]
+    },
+    {
+      "id": "57c2",
+      "name": "",
+      "coordinates": [
+        ""
+      ],
+      "labels": [
+        ""
+      ]
+    },
+    {
+      "id": "a436",
+      "name": "",
+      "coordinates": [
+        ""
+      ],
+      "labels": [
+        ""
+      ]
+    },
+    {
+      "id": "75e5",
+      "name": "",
+      "coordinates": [
+        ""
+      ],
+      "labels": [
+        ""
+      ]
+    },
+    {
+      "id": "803c",
+      "name": "",
+      "coordinates": [
+        ""
+      ],
+      "labels": [
+        ""
+      ]
+    },
+    {
+      "id": "cc7e",
+      "name": "",
+      "coordinates": [
+        ""
+      ],
+      "labels": [
+        ""
+      ]
+    },
+    {
+      "id": "3f20",
+      "name": "",
+      "coordinates": [
+        ""
+      ],
+      "labels": [
+        ""
+      ]
+    },
+    {
+      "id": "1d83",
+      "name": "",
+      "coordinates": [
+        ""
+      ],
+      "labels": [
+        ""
+      ]
+    },
+    {
+      "id": "7612",
+      "name": "",
+      "coordinates": [
+        ""
+      ],
+      "labels": [
+        ""
+      ]
+    },
+    {
+      "id": "4942",
+      "name": "",
+      "coordinates": [
+        ""
+      ],
+      "labels": [
+        ""
+      ]
+    },
+    {
+      "id": "e915",
+      "name": "",
+      "coordinates": [
+        ""
+      ],
+      "labels": [
+        ""
+      ]
+    },
+    {
+      "id": "baf0",
+      "name": "",
+      "coordinates": [
+        ""
+      ],
+      "labels": [
+        ""
+      ]
+    },
+    {
+      "id": "cbd7",
+      "name": "",
+      "coordinates": [
+        ""
+      ],
+      "labels": [
+        ""
+      ]
+    },
+    {
+      "id": "9fe1",
+      "name": "",
+      "coordinates": [
+        ""
+      ],
+      "labels": [
+        ""
+      ]
+    },
+    {
+      "id": "f148",
+      "name": "",
+      "coordinates": [
+        ""
+      ],
+      "labels": [
+        ""
+      ]
     }
   ]
 }
