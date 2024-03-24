@@ -1,0 +1,41 @@
+{
+  "entities": [
+    {
+      "id": "1",
+      "name": "Entity1",
+      "coordinates": [
+        -5,
+        10
+      ],
+      "labels": [
+        "labelA",
+        "labelB",
+        "labelE"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Entity2",
+      "coordinates": [
+        3,
+        6
+      ],
+      "labels": [
+        "labelC",
+        "labelD"
+      ]
+    },
+    {
+      "name": "Entity4",
+      "coordinates": [
+        4,
+        5
+      ],
+      "labels": [
+        "labelA",
+        "labelC"
+      ],
+      "id": "3"
+    }
+  ]
+}
