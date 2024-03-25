@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Stage, Layer, Rect, Text, Group } from 'react-konva';
 import { useSelector, useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 import {
   createEntity,
   removeEntity,
@@ -20,8 +21,12 @@ const style = {
   modal: `flex flex-col bg-red justify-center z-50 gap-4`,
   heading: `text-5xl font-bold`,
   subheading: `text-2xl font-bold`,
-  // canvas: `flex flex-col`,
 };
+
+const X_HEADING = 5;
+const Y_HEADING = 5;
+const X_TABLE = 5;
+const Y_TABLE = 55;
 
 function EntitiesList() {
   const entities = useSelector((state) => state.entities);
@@ -42,7 +47,7 @@ function EntitiesList() {
   // State for Canvas
   const [dimensions, setDimensions] = useState({
     height: window.innerHeight,
-    width: window.innerWidth - 200,
+    width: window.innerWidth - 100,
   });
 
   // Fetch entities from the server
@@ -65,7 +70,7 @@ function EntitiesList() {
     function handleResize() {
       setDimensions({
         height: window.innerHeight,
-        width: window.innerWidth - 200,
+        width: window.innerWidth - 100,
       });
     }
 
@@ -81,6 +86,7 @@ function EntitiesList() {
     e.preventDefault();
 
     const newEntity = {
+      id: uuidv4(),
       name,
       coordinates: coordinates.split(','),
       labels: labels.split(','),
@@ -182,14 +188,14 @@ function EntitiesList() {
             />
             <button
               className={style.button__primary}
-              type="button"
+              type="submit"
               onClick={handleUpdate}
             >
               Update Entity
             </button>
             <button
               className={style.button__accent}
-              type="button"
+              type="submit"
               onClick={handleClose}
             >
               Close
@@ -240,8 +246,8 @@ function EntitiesList() {
             <Layer>
               <Group>
                 <Rect
-                  x={5}
-                  y={5}
+                  x={X_HEADING}
+                  y={Y_HEADING}
                   width={100}
                   height={50}
                   stroke="black"
@@ -249,15 +255,15 @@ function EntitiesList() {
                 />
                 <Text
                   text="Name"
-                  x={15}
-                  y={25}
+                  x={10 + X_HEADING}
+                  y={20 + Y_HEADING}
                   fontSize={16}
                   align="center"
-                  fontWeight="bold"
+                  fontStyle="700"
                 />
                 <Rect
-                  x={105}
-                  y={5}
+                  x={100 + X_HEADING}
+                  y={Y_HEADING}
                   width={150}
                   height={50}
                   stroke="black"
@@ -265,50 +271,50 @@ function EntitiesList() {
                 />
                 <Text
                   text="Coordinates"
-                  x={115}
-                  y={25}
+                  x={110 + X_HEADING}
+                  y={20 + Y_HEADING}
                   fontSize={16}
                   align="center"
-                  fontWeight="bold"
+                  fontStyle="700"
                 />
                 <Rect
-                  x={255}
-                  y={5}
-                  width={150}
+                  x={250 + X_HEADING}
+                  y={Y_HEADING}
+                  width={250}
                   height={50}
                   stroke="black"
                   strokeWidth={2}
                 />
                 <Text
                   text="Labels"
-                  x={265}
-                  y={25}
+                  x={260 + X_HEADING}
+                  y={20 + Y_HEADING}
                   fontSize={16}
                   align="center"
-                  fontWeight="bold"
+                  fontStyle="700"
                 />
                 <Rect
-                  x={405}
-                  y={5}
-                  width={200}
+                  x={500 + X_HEADING}
+                  y={Y_HEADING}
+                  width={125}
                   height={50}
                   stroke="black"
                   strokeWidth={2}
                 />
                 <Text
                   text="Actions"
-                  x={415}
-                  y={25}
+                  x={510 + X_HEADING}
+                  y={20 + Y_HEADING}
                   fontSize={16}
                   align="center"
-                  fontWeight="bold"
+                  fontStyle="700"
                 />
               </Group>
               {entities.map((entity, index) => (
                 <Group key={entity.id}>
                   <Rect
-                    x={20}
-                    y={60 + index * 50}
+                    x={X_TABLE}
+                    y={Y_TABLE + index * 50}
                     width={100}
                     height={50}
                     stroke="black"
@@ -316,14 +322,14 @@ function EntitiesList() {
                   />
                   <Text
                     text={entity.name}
-                    x={70}
-                    y={80 + index * 50}
+                    x={10 + X_TABLE}
+                    y={20 + Y_TABLE + index * 50}
                     fontSize={16}
                     align="center"
                   />
                   <Rect
-                    x={120}
-                    y={60 + index * 50}
+                    x={100 + X_TABLE}
+                    y={Y_TABLE + index * 50}
                     width={150}
                     height={50}
                     stroke="black"
@@ -331,55 +337,49 @@ function EntitiesList() {
                   />
                   <Text
                     text={entity.coordinates.join(', ')}
-                    x={195}
-                    y={80 + index * 50}
+                    x={110 + X_TABLE}
+                    y={20 + Y_TABLE + index * 50}
                     fontSize={16}
                     align="center"
                   />
                   <Rect
-                    x={270}
-                    y={60 + index * 50}
-                    width={150}
+                    x={250 + X_TABLE}
+                    y={Y_TABLE + index * 50}
+                    width={250}
                     height={50}
                     stroke="black"
                     strokeWidth={1}
                   />
                   <Text
                     text={entity.labels.join(', ')}
-                    x={345}
-                    y={80 + index * 50}
+                    x={260 + X_TABLE}
+                    y={20 + Y_TABLE + index * 50}
                     fontSize={16}
                     align="center"
                   />
                   <Rect
-                    x={420}
-                    y={60 + index * 50}
-                    width={50}
+                    x={500 + X_TABLE}
+                    y={Y_TABLE + index * 50}
+                    width={125}
                     height={50}
                     stroke="black"
                     strokeWidth={1}
                   />
                   <Text
                     text="Edit"
-                    x={445}
-                    y={80 + index * 50}
+                    fill="blue"
+                    x={510 + X_TABLE}
+                    y={20 + Y_TABLE + index * 50}
                     onTap={() => handleEdit(entity.id)}
                     onClick={() => handleEdit(entity.id)}
                     fontSize={16}
                     align="center"
                   />
-                  <Rect
-                    x={470}
-                    y={60 + index * 50}
-                    width={70}
-                    height={50}
-                    stroke="black"
-                    strokeWidth={1}
-                  />
                   <Text
                     text="Remove"
-                    x={505}
-                    y={80 + index * 50}
+                    fill="red"
+                    x={550 + X_TABLE}
+                    y={20 + Y_TABLE + index * 50}
                     onTap={() => handleRemove(entity.id)}
                     onClick={() => handleRemove(entity.id)}
                     fontSize={16}

@@ -1,31 +1,7 @@
 {
   "entities": [
     {
-      "id": "2",
-      "name": "Entity2",
-      "coordinates": [
-        3,
-        6
-      ],
-      "labels": [
-        "labelC",
-        "labelD"
-      ]
-    },
-    {
-      "name": "Entity4",
-      "coordinates": [
-        4,
-        5
-      ],
-      "labels": [
-        "labelA",
-        "labelC"
-      ],
-      "id": "3"
-    },
-    {
-      "id": "df24",
+      "id": "6d2b4d90-7d95-498e-a645-45b94768d3be",
       "name": "Entity1",
       "coordinates": [
         "-5",
@@ -38,153 +14,27 @@
       ]
     },
     {
-      "id": "5634",
-      "name": "",
+      "id": "c24dabfd-0ee6-4bf5-b797-2f7738de458a",
+      "name": "Entity2",
       "coordinates": [
-        ""
+        "3",
+        " 6"
       ],
       "labels": [
-        ""
+        "labelC",
+        " labelD"
       ]
     },
     {
-      "id": "57c2",
-      "name": "",
+      "id": "ccdcc5d8-1d99-47aa-a8da-ec879e55a8a3",
+      "name": "Entity3",
       "coordinates": [
-        ""
+        "4",
+        " -1"
       ],
       "labels": [
-        ""
-      ]
-    },
-    {
-      "id": "a436",
-      "name": "",
-      "coordinates": [
-        ""
-      ],
-      "labels": [
-        ""
-      ]
-    },
-    {
-      "id": "75e5",
-      "name": "",
-      "coordinates": [
-        ""
-      ],
-      "labels": [
-        ""
-      ]
-    },
-    {
-      "id": "803c",
-      "name": "",
-      "coordinates": [
-        ""
-      ],
-      "labels": [
-        ""
-      ]
-    },
-    {
-      "id": "cc7e",
-      "name": "",
-      "coordinates": [
-        ""
-      ],
-      "labels": [
-        ""
-      ]
-    },
-    {
-      "id": "3f20",
-      "name": "",
-      "coordinates": [
-        ""
-      ],
-      "labels": [
-        ""
-      ]
-    },
-    {
-      "id": "1d83",
-      "name": "",
-      "coordinates": [
-        ""
-      ],
-      "labels": [
-        ""
-      ]
-    },
-    {
-      "id": "7612",
-      "name": "",
-      "coordinates": [
-        ""
-      ],
-      "labels": [
-        ""
-      ]
-    },
-    {
-      "id": "4942",
-      "name": "",
-      "coordinates": [
-        ""
-      ],
-      "labels": [
-        ""
-      ]
-    },
-    {
-      "id": "e915",
-      "name": "",
-      "coordinates": [
-        ""
-      ],
-      "labels": [
-        ""
-      ]
-    },
-    {
-      "id": "baf0",
-      "name": "",
-      "coordinates": [
-        ""
-      ],
-      "labels": [
-        ""
-      ]
-    },
-    {
-      "id": "cbd7",
-      "name": "",
-      "coordinates": [
-        ""
-      ],
-      "labels": [
-        ""
-      ]
-    },
-    {
-      "id": "9fe1",
-      "name": "",
-      "coordinates": [
-        ""
-      ],
-      "labels": [
-        ""
-      ]
-    },
-    {
-      "id": "f148",
-      "name": "",
-      "coordinates": [
-        ""
-      ],
-      "labels": [
-        ""
+        "labelA",
+        " labelC"
       ]
     }
   ]
