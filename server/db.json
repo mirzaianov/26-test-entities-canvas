@@ -1,41 +1,53 @@
 {
   "entities": [
     {
-      "id": "6d2b4d90-7d95-498e-a645-45b94768d3be",
       "name": "Entity1",
       "coordinates": [
-        "-5",
-        " 10"
+        -5,
+        10
       ],
       "labels": [
         "labelA",
-        " labelB",
-        " labelE"
-      ]
+        "labelB",
+        "labelE"
+      ],
+      "id": "6d2b4d90-7d95-498e-a645-45b94768d3be"
     },
     {
-      "id": "c24dabfd-0ee6-4bf5-b797-2f7738de458a",
       "name": "Entity2",
       "coordinates": [
-        "3",
-        " 6"
+        3,
+        6
       ],
       "labels": [
         "labelC",
-        " labelD"
-      ]
+        "labelD"
+      ],
+      "id": "c24dabfd-0ee6-4bf5-b797-2f7738de458a"
     },
     {
-      "id": "ccdcc5d8-1d99-47aa-a8da-ec879e55a8a3",
       "name": "Entity3",
       "coordinates": [
-        "4",
-        " -1"
+        4,
+        -1
       ],
       "labels": [
         "labelA",
-        " labelC"
-      ]
+        "labelC"
+      ],
+      "id": "ccdcc5d8-1d99-47aa-a8da-ec879e55a8a3"
+    },
+    {
+      "name": "Entity4",
+      "coordinates": [
+        -5,
+        55
+      ],
+      "labels": [
+        "labelA",
+        "labelB"
+      ],
+      "id": "290825b1-bedb-487c-a8d3-3184a0d3ea72"
     }
   ]
 }

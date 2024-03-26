@@ -88,9 +88,10 @@ function EntitiesList() {
     const newEntity = {
       id: uuidv4(),
       name,
-      coordinates: coordinates.split(','),
-      labels: labels.split(','),
+      coordinates: coordinates.split(',').map((item) => +item.trim()),
+      labels: labels.split(',').map((item) => item.trim()),
     };
+
     fetch('http://localhost:5000/entities', {
       method: 'POST',
       headers: {
@@ -105,6 +106,7 @@ function EntitiesList() {
       .catch((error) => {
         console.error('Error:', error);
       });
+
     setName('');
     setCoordinates('');
     setLabels('');
@@ -124,7 +126,9 @@ function EntitiesList() {
 
   const handleEdit = (id) => {
     setIsEdit(true);
-    const entity = entities.find((entity) => entity.id === id);
+
+    const entity = entities.find((item) => item.id === id);
+
     setEditId(entity.id);
     setEditName(entity.name);
     setEditCoordinates(entity.coordinates.join(', '));
@@ -134,9 +138,10 @@ function EntitiesList() {
   const handleUpdate = () => {
     const updatedEntity = {
       name: editName,
-      coordinates: editCoordinates.split(', ').map(Number), // ?
-      labels: editLabels.split(', '),
+      coordinates: editCoordinates.split(',').map((item) => +item.trim()),
+      labels: editLabels.split(',').map((item) => item.trim()),
     };
+
     fetch(`http://localhost:5000/entities/${editId}`, {
       method: 'PUT',
       headers: {
@@ -191,7 +196,7 @@ function EntitiesList() {
               type="submit"
               onClick={handleUpdate}
             >
-              Update Entity
+              Update
             </button>
             <button
               className={style.button__accent}
