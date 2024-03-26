@@ -12,15 +12,20 @@ const style = {
   entities: `flex flex-col justify-center gap-5 overflow-x-auto`,
   form: `flex gap-2`,
   entity: `flex justify-between gap-2`,
-  input: `input input-bordered w-full max-w-xs`,
+  input: `input input-bordered input- input-md w-full max-w-xs`,
   buttons: `flex gap-2`,
   button: `btn`,
-  button__primary: `btn btn-primary`,
-  button__secondary: `btn btn-secondary`,
-  button__accent: `btn btn-accent`,
-  modal: `flex flex-col bg-red justify-center z-50 gap-4`,
-  heading: `text-5xl font-bold`,
+  button__primary: `btn btn-primary self-end`,
+  button__secondary: `btn btn-secondary self-end`,
+  button__accent: `btn btn-accent self-end`,
+  edit: `flex flex-col gap-4`,
+  heading: `text-5xl font-bold m-auto`,
   subheading: `text-2xl font-bold`,
+  input__group: `flex gap-2 align-middle`,
+  form__edit: `flex flex-col gap-4`,
+  label__container: `form-control flex flex-col justify-end w-full max-w-xs`,
+  label__item: `label`,
+  label__text: `label-text`,
 };
 
 const X_HEADING = 5;
@@ -167,44 +172,67 @@ function EntitiesList() {
     <>
       {/* Modal for editing an entity */}
       {isEdit ? (
-        <div className={style.modal}>
+        <div className={style.edit}>
           <h2 className={style.subheading}>Edit Entity</h2>
-          <form className={style.form}>
-            <input
-              className={style.input}
-              type="text"
-              value={editName}
-              onChange={(e) => setEditName(e.target.value)}
-              placeholder="Name"
-            />
-            <input
-              className={style.input}
-              type="text"
-              value={editCoordinates}
-              onChange={(e) => setEditCoordinates(e.target.value)}
-              placeholder="Coordinates (comma-separated)"
-            />
-            <input
-              className={style.input}
-              type="text"
-              value={editLabels}
-              onChange={(e) => setEditLabels(e.target.value)}
-              placeholder="Labels (comma-separated)"
-            />
-            <button
-              className={style.button__primary}
-              type="submit"
-              onClick={handleUpdate}
-            >
-              Update
-            </button>
-            <button
-              className={style.button__accent}
-              type="submit"
-              onClick={handleClose}
-            >
-              Close
-            </button>
+          <form className={style.form__edit}>
+            <div className={style.input__group}>
+              <label className={style.label__container}>
+                <div className={style.label__item}>
+                  <span className={style.label__text}>Enter a new name</span>
+                </div>
+                <input
+                  className={style.input}
+                  type="text"
+                  value={editName}
+                  onChange={(e) => setEditName(e.target.value)}
+                  placeholder="e.g. Entity5"
+                />
+              </label>
+              <label className={style.label__container}>
+                <div className={style.label__item}>
+                  <span className={style.label__text}>
+                    Enter new coordinates (comma-separated)
+                  </span>
+                </div>
+                <input
+                  className={style.input}
+                  type="text"
+                  value={editCoordinates}
+                  onChange={(e) => setEditCoordinates(e.target.value)}
+                  placeholder="e.g. -5, 5"
+                />
+              </label>
+              <label className={style.label__container}>
+                <div className={style.label__item}>
+                  <span className={style.label__text}>
+                    Enter new labels (comma-separated)
+                  </span>
+                </div>
+                <input
+                  className={style.input}
+                  type="text"
+                  value={editLabels}
+                  onChange={(e) => setEditLabels(e.target.value)}
+                  placeholder="e.g. labelQ, labelR"
+                />
+              </label>
+            </div>
+            <div className={style.buttons}>
+              <button
+                className={style.button__primary}
+                type="submit"
+                onClick={handleUpdate}
+              >
+                Update
+              </button>
+              <button
+                className={style.button__accent}
+                type="submit"
+                onClick={handleClose}
+              >
+                Close
+              </button>
+            </div>
           </form>
         </div>
       ) : (
@@ -213,27 +241,46 @@ function EntitiesList() {
           {/* Form for adding a new entity */}
           <h2 className={style.subheading}>Add New Entity</h2>
           <form className={style.form}>
-            <input
-              className={style.input}
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="Name"
-            />
-            <input
-              className={style.input}
-              type="text"
-              value={coordinates}
-              onChange={(e) => setCoordinates(e.target.value)}
-              placeholder="Coordinates (comma-separated)"
-            />
-            <input
-              className={style.input}
-              type="text"
-              value={labels}
-              onChange={(e) => setLabels(e.target.value)}
-              placeholder="Labels (comma-separated)"
-            />
+            <label className={style.label__container}>
+              <div className={style.label__item}>
+                <span className={style.label__text}>Enter a name</span>
+              </div>
+              <input
+                className={style.input}
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="e.g. Entity5"
+              />
+            </label>
+            <label className={style.label__container}>
+              <div className={style.label__item}>
+                <span className={style.label__text}>
+                  Enter coordinates (comma-separated)
+                </span>
+              </div>
+              <input
+                className={style.input}
+                type="text"
+                value={coordinates}
+                onChange={(e) => setCoordinates(e.target.value)}
+                placeholder="e.g. -5, 5"
+              />
+            </label>
+            <label className={style.label__container}>
+              <div className={style.label__item}>
+                <span className={style.label__text}>
+                  Enter coordinates (comma-separated)
+                </span>
+              </div>
+              <input
+                className={style.input}
+                type="text"
+                value={labels}
+                onChange={(e) => setLabels(e.target.value)}
+                placeholder="e.g. labelQ, labelR"
+              />
+            </label>
             <button
               className={style.button__primary}
               type="submit"
