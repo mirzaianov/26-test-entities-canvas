@@ -426,6 +426,14 @@ function EntitiesList() {
                     onClick={() => handleEdit(entity.id)}
                     fontSize={16}
                     align="center"
+                    onMouseEnter={(e) => {
+                      const container = e.target.getStage().container();
+                      container.style.cursor = 'pointer';
+                    }}
+                    onMouseLeave={(e) => {
+                      const container = e.target.getStage().container();
+                      container.style.cursor = 'default';
+                    }}
                   />
                   <Text
                     text="Remove"
@@ -436,6 +444,14 @@ function EntitiesList() {
                     onClick={() => handleRemove(entity.id)}
                     fontSize={16}
                     align="center"
+                    onMouseEnter={(e) => {
+                      const container = e.target.getStage().container();
+                      container.style.cursor = 'pointer';
+                    }}
+                    onMouseLeave={(e) => {
+                      const container = e.target.getStage().container();
+                      container.style.cursor = 'default';
+                    }}
                   />
                 </Group>
               ))}

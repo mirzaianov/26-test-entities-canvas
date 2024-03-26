@@ -36,6 +36,31 @@
         "labelC"
       ],
       "id": "ccdcc5d8-1d99-47aa-a8da-ec879e55a8a3"
+    },
+    {
+      "id": "c920b5e7-b5bb-4992-a6fc-37ba54d1d3d1",
+      "name": "Entity4",
+      "coordinates": [
+        -5,
+        5
+      ],
+      "labels": [
+        "labelQ",
+        "labelZ"
+      ]
+    },
+    {
+      "id": "749a1bcc-5dcb-412d-8edb-b7e05f129004",
+      "name": "Entity5",
+      "coordinates": [
+        0,
+        0
+      ],
+      "labels": [
+        "labelF",
+        "labelU",
+        "labelP"
+      ]
     }
   ]
 }
