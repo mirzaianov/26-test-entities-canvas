@@ -160,7 +160,9 @@ function EntitiesList() {
     );
   };
 
-  const handleUpdate = () => {
+  const handleUpdate = (e) => {
+    e.preventDefault();
+
     const updatedEntity = {
       name: editName,
       coordinates: editCoordinates.split(',').map((item) => +item.trim()),
