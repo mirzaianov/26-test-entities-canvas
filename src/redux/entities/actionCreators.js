@@ -14,3 +14,7 @@ export const editEntity = (id, updates) => ({
   type: a.EDIT_ENTITY,
   payload: { id, updates },
 });
+
+export const clearEntity = () => ({
+  type: a.CLEAR_ENTITY,
+});

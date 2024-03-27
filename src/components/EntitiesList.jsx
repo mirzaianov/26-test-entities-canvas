@@ -6,6 +6,7 @@ import {
   createEntity,
   removeEntity,
   editEntity,
+  clearEntity,
 } from '../redux/entities/actionCreators.js';
 
 const style = {
@@ -57,6 +58,8 @@ function EntitiesList() {
 
   // Fetch entities from the server
   useEffect(() => {
+    dispatch(clearEntity());
+
     fetch('http://localhost:5000/entities')
       .then((response) => response.json())
       .then((data) => {

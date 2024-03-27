@@ -14,6 +14,8 @@ const entitiesReducer = (state = initialState, action) => {
           ? { ...entity, ...action.payload.updates }
           : entity,
       );
+    case a.CLEAR_ENTITY:
+      return [];
     default:
       return state;
   }

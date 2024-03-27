@@ -1,3 +1,4 @@
 export const CREATE_ENTITY = 'CREATE_ENTITY';
 export const REMOVE_ENTITY = 'REMOVE_ENTITY';
 export const EDIT_ENTITY = 'EDIT_ENTITY';
+export const CLEAR_ENTITY = 'CLEAR_ENTITY';
