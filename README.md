@@ -24,6 +24,7 @@ A test project that renders a table of entities in `Canvas`
 A start in the development mode:
 
     npm create vite@latest
+    cd my-project
     npm install
 
 ### Execution
