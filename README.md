@@ -4,7 +4,7 @@
 
 ## Description
 
-A test project that renders a table of entities in canvas
+A test project that renders a table of entities in Canvas
 
 ### Features
 
