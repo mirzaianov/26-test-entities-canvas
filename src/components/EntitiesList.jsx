@@ -270,7 +270,7 @@ function EntitiesList() {
             <label className={style.label__container}>
               <div className={style.label__item}>
                 <span className={style.label__text}>
-                  Enter coordinates (comma-separated)
+                  Enter labels (comma-separated)
                 </span>
               </div>
               <input
