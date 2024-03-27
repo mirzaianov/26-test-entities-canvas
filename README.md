@@ -4,14 +4,14 @@
 
 ## Description
 
-A test project that renders a table of entities in Canvas
+A test project that renders a table of entities in `Canvas`
 
 ### Features
 
-1. A dataset visualization as a table using Canvas
-2. The list view of entities with the Edit & Remove buttons
-3. CRUD operations with entities
-4. A view of a single entity with an ability to change `name`, `coordinate` & `labels`
+- A dataset visualization as a table using `Canvas`
+- The list view of entities with the `Edit` & `Remove` buttons
+- CRUD operations with entities
+- A view of a single entity with an ability to change `Name`, `Coordinate` & `Labels`
 
 ### Dependencies
 
@@ -21,7 +21,7 @@ A test project that renders a table of entities in Canvas
 
 ### Installation
 
-A start in a development mode:
+A start in the development mode:
 
     npm create vite@latest
     npm install
