@@ -49,11 +49,20 @@ function EntitiesList() {
   const labels = useSelector((state) => state.formInputs.labels);
 
   // State for the edit form
-  const [isEdit, setIsEdit] = useState(false);
-  const [editId, setEditId] = useState(null);
-  const [editName, setEditName] = useState('');
-  const [editCoordinates, setEditCoordinates] = useState('');
-  const [editLabels, setEditLabels] = useState('');
+  // const [isEdit, setIsEdit] = useState(false);
+  // const [editId, setEditId] = useState(null);
+  // const [editName, setEditName] = useState('');
+  // const [editCoordinates, setEditCoordinates] = useState('');
+  // const [editLabels, setEditLabels] = useState('');
+
+  // State for the edit form
+  const isEdit = useSelector((state) => state.editForm.isEdit);
+  const editId = useSelector((state) => state.editForm.editId);
+  const editName = useSelector((state) => state.editForm.editName);
+  const editCoordinates = useSelector(
+    (state) => state.editForm.editCoordinates,
+  );
+  const editLabels = useSelector((state) => state.editForm.editLabels);
 
   // State for Canvas
   const [dimensions, setDimensions] = useState({
@@ -136,14 +145,19 @@ function EntitiesList() {
   };
 
   const handleEdit = (id) => {
-    setIsEdit(true);
+    dispatch(setEditForm(true, editId, editName, editCoordinates, editLabels));
 
     const entity = entities.find((item) => item.id === id);
 
-    setEditId(entity.id);
-    setEditName(entity.name);
-    setEditCoordinates(entity.coordinates.join(', '));
-    setEditLabels(entity.labels.join(', '));
+    dispatch(
+      setEditForm(
+        true,
+        entity.id,
+        entity.name,
+        entity.coordinates.join(', '),
+        entity.labels.join(', '),
+      ),
+    );
   };
 
   const handleUpdate = () => {
@@ -163,7 +177,9 @@ function EntitiesList() {
       .then((response) => response.json())
       .then((data) => {
         dispatch(editEntity(editId, data));
-        setIsEdit(false);
+        dispatch(
+          setEditForm(false, editId, editName, editCoordinates, editLabels),
+        );
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -171,7 +187,7 @@ function EntitiesList() {
   };
 
   const handleClose = () => {
-    setIsEdit(false);
+    dispatch(setEditForm(false, editId, editName, editCoordinates, editLabels));
   };
 
   return (
@@ -190,7 +206,17 @@ function EntitiesList() {
                   className={style.input}
                   type="text"
                   value={editName}
-                  onChange={(e) => setEditName(e.target.value)}
+                  onChange={(e) =>
+                    dispatch(
+                      setEditForm(
+                        isEdit,
+                        editId,
+                        e.target.value,
+                        editCoordinates,
+                        editLabels,
+                      ),
+                    )
+                  }
                   placeholder="e.g. Entity5"
                 />
               </label>
@@ -204,7 +230,17 @@ function EntitiesList() {
                   className={style.input}
                   type="text"
                   value={editCoordinates}
-                  onChange={(e) => setEditCoordinates(e.target.value)}
+                  onChange={(e) =>
+                    dispatch(
+                      setEditForm(
+                        isEdit,
+                        editId,
+                        editName,
+                        e.target.value,
+                        editLabels,
+                      ),
+                    )
+                  }
                   placeholder="e.g. -5, 5"
                 />
               </label>
@@ -218,7 +254,17 @@ function EntitiesList() {
                   className={style.input}
                   type="text"
                   value={editLabels}
-                  onChange={(e) => setEditLabels(e.target.value)}
+                  onChange={(e) =>
+                    dispatch(
+                      setEditForm(
+                        isEdit,
+                        editId,
+                        editName,
+                        editCoordinates,
+                        e.target.value,
+                      ),
+                    )
+                  }
                   placeholder="e.g. labelQ, labelR"
                 />
               </label>

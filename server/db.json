@@ -50,27 +50,16 @@
       "id": "c920b5e7-b5bb-4992-a6fc-37ba54d1d3d1"
     },
     {
-      "id": "62c82ad2-73d7-4d89-9691-73f69a8d4964",
       "name": "Entity5",
       "coordinates": [
         0,
-        0
+        2
       ],
       "labels": [
-        "labelN",
-        "labelE"
-      ]
-    },
-    {
-      "id": "eb291054-794f-49cb-9ec9-21f06a67e552",
-      "name": "Entity6",
-      "coordinates": [
-        1,
-        1
+        "labelA",
+        "labelB"
       ],
-      "labels": [
-        "labelA"
-      ]
+      "id": "8c80fe46-fba2-4bfe-b34f-c6783efdbbfb"
     }
   ]
 }
