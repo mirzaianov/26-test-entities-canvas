@@ -6,9 +6,7 @@ import {
   editEntity,
   clearEntity,
 } from '../redux/entities/actionCreators.js';
-// import EditEntity from './EditEntity.jsx';
-// import InputEntity from './InputEntity.jsx';
-// import CanvasTable from './CanvasTable.jsx';
+import validateInput from '../utils/validateInput.js';
 import { setFormInputs } from '../redux/formInputs/actionCreators.js';
 import { setEditForm } from '../redux/editForm/actionCreators.js';
 
@@ -59,6 +57,13 @@ function Entities() {
       labels: labels.split(',').map((item) => item.trim()),
     };
 
+    if (
+      validateInput(newEntity.name, newEntity.coordinates, newEntity.labels) ===
+      false
+    ) {
+      return;
+    }
+
     fetch('http://localhost:5000/entities', {
       method: 'POST',
       headers: {
@@ -85,6 +90,16 @@ function Entities() {
       coordinates: editCoordinates.split(',').map((item) => +item.trim()),
       labels: editLabels.split(',').map((item) => item.trim()),
     };
+
+    if (
+      validateInput(
+        updatedEntity.name,
+        updatedEntity.coordinates,
+        updatedEntity.labels,
+      ) === false
+    ) {
+      return;
+    }
 
     fetch(`http://localhost:5000/entities/${editId}`, {
       method: 'PUT',
