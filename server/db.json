@@ -38,27 +38,15 @@
       "id": "ccdcc5d8-1d99-47aa-a8da-ec879e55a8a3"
     },
     {
-      "name": "Entity4",
+      "id": "61bde558-4a93-4aa9-a7dd-cca7d104d846",
+      "name": "Entity9",
       "coordinates": [
-        -5,
-        55
+        9,
+        9
       ],
       "labels": [
-        "labelY",
-        "labelZ"
-      ],
-      "id": "c920b5e7-b5bb-4992-a6fc-37ba54d1d3d1"
-    },
-    {
-      "id": "fc2c0b0c-b080-4c19-bf31-650d214105c9",
-      "name": "Entity5",
-      "coordinates": [
-        0,
-        0
-      ],
-      "labels": [
-        "l1",
-        "l2"
+        "labelR",
+        "labelT"
       ]
     }
   ]
