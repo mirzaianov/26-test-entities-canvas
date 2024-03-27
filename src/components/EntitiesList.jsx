@@ -8,6 +8,9 @@ import {
   editEntity,
   clearEntity,
 } from '../redux/entities/actionCreators.js';
+import { setFormInputs } from '../redux/formInputs/actionCreators.js';
+import { setEditForm } from '../redux/editForm/actionCreators.js';
+import { setDimensions } from '../redux/canvas/actionCreators.js';
 
 const style = {
   entities: `flex flex-col justify-center gap-5 overflow-x-auto`,
@@ -35,13 +38,15 @@ const X_TABLE = 5;
 const Y_TABLE = 55;
 
 function EntitiesList() {
-  const entities = useSelector((state) => state.entities);
   const dispatch = useDispatch();
 
+  // State for entities
+  const entities = useSelector((state) => state.entities);
+
   // State for the form inputs
-  const [name, setName] = useState('');
-  const [coordinates, setCoordinates] = useState('');
-  const [labels, setLabels] = useState('');
+  const name = useSelector((state) => state.formInputs.name);
+  const coordinates = useSelector((state) => state.formInputs.coordinates);
+  const labels = useSelector((state) => state.formInputs.labels);
 
   // State for the edit form
   const [isEdit, setIsEdit] = useState(false);
@@ -115,9 +120,7 @@ function EntitiesList() {
         console.error('Error:', error);
       });
 
-    setName('');
-    setCoordinates('');
-    setLabels('');
+    dispatch(setFormInputs('', '', ''));
   };
 
   const handleRemove = (id) => {
@@ -252,7 +255,9 @@ function EntitiesList() {
                 className={style.input}
                 type="text"
                 value={name}
-                onChange={(e) => setName(e.target.value)}
+                onChange={(e) =>
+                  dispatch(setFormInputs(e.target.value, coordinates, labels))
+                }
                 placeholder="e.g. Entity5"
               />
             </label>
@@ -266,7 +271,9 @@ function EntitiesList() {
                 className={style.input}
                 type="text"
                 value={coordinates}
-                onChange={(e) => setCoordinates(e.target.value)}
+                onChange={(e) =>
+                  dispatch(setFormInputs(name, e.target.value, labels))
+                }
                 placeholder="e.g. -5, 5"
               />
             </label>
@@ -280,7 +287,9 @@ function EntitiesList() {
                 className={style.input}
                 type="text"
                 value={labels}
-                onChange={(e) => setLabels(e.target.value)}
+                onChange={(e) =>
+                  dispatch(setFormInputs(name, coordinates, e.target.value))
+                }
                 placeholder="e.g. labelQ, labelR"
               />
             </label>

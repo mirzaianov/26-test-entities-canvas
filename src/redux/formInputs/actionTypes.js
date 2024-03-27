@@ -1,0 +1,1 @@
+export const SET_FORM_INPUTS = 'SET_FORM_INPUTS';
