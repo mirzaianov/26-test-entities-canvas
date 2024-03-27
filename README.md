@@ -13,6 +13,12 @@ A test project that renders a table of entities in Canvas
 3. CRUD operations with entities.
 4. View of a single entity with ability to change name, coordinate, add/remove labels.
 
+### Dependencies
+
+- Vite
+- React + Redux + Tailwind + Konva
+- JSON Server
+
 ### Installation
 
 Start in a development mode:
