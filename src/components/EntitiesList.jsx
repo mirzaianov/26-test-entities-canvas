@@ -49,13 +49,6 @@ function EntitiesList() {
   const labels = useSelector((state) => state.formInputs.labels);
 
   // State for the edit form
-  // const [isEdit, setIsEdit] = useState(false);
-  // const [editId, setEditId] = useState(null);
-  // const [editName, setEditName] = useState('');
-  // const [editCoordinates, setEditCoordinates] = useState('');
-  // const [editLabels, setEditLabels] = useState('');
-
-  // State for the edit form
   const isEdit = useSelector((state) => state.editForm.isEdit);
   const editId = useSelector((state) => state.editForm.editId);
   const editName = useSelector((state) => state.editForm.editName);
@@ -64,11 +57,13 @@ function EntitiesList() {
   );
   const editLabels = useSelector((state) => state.editForm.editLabels);
 
-  // State for Canvas
-  const [dimensions, setDimensions] = useState({
-    height: window.innerHeight,
-    width: window.innerWidth - 100,
-  });
+  // State for canvas
+  // const [dimensions, setDimensions] = useState({
+  //   height: window.innerHeight,
+  //   width: window.innerWidth - 100,
+  // });
+
+  const dimensions = useSelector((state) => state.canvas);
 
   // Fetch entities from the server
   useEffect(() => {
@@ -90,10 +85,7 @@ function EntitiesList() {
   // Handle window resize
   useEffect(() => {
     function handleResize() {
-      setDimensions({
-        height: window.innerHeight,
-        width: window.innerWidth - 100,
-      });
+      dispatch(setDimensions(window.innerWidth - 100, window.innerHeight));
     }
 
     window.addEventListener('resize', handleResize);
@@ -101,7 +93,7 @@ function EntitiesList() {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [dispatch]);
 
   // Handlers for adding, removing and editing entities
   const handleCreate = (e) => {

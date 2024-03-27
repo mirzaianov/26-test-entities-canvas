@@ -41,7 +41,7 @@
       "name": "Entity4",
       "coordinates": [
         -5,
-        50
+        55
       ],
       "labels": [
         "labelY",
@@ -50,16 +50,16 @@
       "id": "c920b5e7-b5bb-4992-a6fc-37ba54d1d3d1"
     },
     {
+      "id": "fc2c0b0c-b080-4c19-bf31-650d214105c9",
       "name": "Entity5",
       "coordinates": [
         0,
-        3
+        0
       ],
       "labels": [
-        "labelA",
-        "labelB"
-      ],
-      "id": "8c80fe46-fba2-4bfe-b34f-c6783efdbbfb"
+        "l1",
+        "l2"
+      ]
     }
   ]
 }
