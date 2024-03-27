@@ -91,7 +91,7 @@ const CanvasTable = () => {
             strokeWidth={2}
           />
           <Text
-            text="Coordinates"
+            text="Coordinate"
             x={110 + X_HEADING}
             y={20 + Y_HEADING}
             fontSize={16}

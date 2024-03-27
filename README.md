@@ -1,6 +1,6 @@
 # The Entities Project
 
-![MasterHead](https://www.dropbox.com/scl/fi/ch0aki7fuxzwsc0637k1i/Screenshot-2024-03-27-211522.png?rlkey=phse23femu54z8kjiwnw23oxe&raw=1)
+![MasterHead](https://www.dropbox.com/scl/fi/26mt1bajkivweu7izmijn/Screenshot.png?rlkey=fkxoyhypxdjee0o6kq0yexmff&raw=1)
 
 ## Description
 
