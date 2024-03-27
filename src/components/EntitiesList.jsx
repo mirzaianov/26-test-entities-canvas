@@ -11,7 +11,6 @@ import InputEntity from './InputEntity.jsx';
 import CanvasTable from './CanvasTable.jsx';
 import { setFormInputs } from '../redux/formInputs/actionCreators.js';
 import { setEditForm } from '../redux/editForm/actionCreators.js';
-import { setDimensions } from '../redux/canvas/actionCreators.js';
 
 const style = {
   entities: `flex flex-col justify-center gap-5 overflow-x-auto`,
@@ -43,19 +42,6 @@ function EntitiesList() {
       .catch((error) => {
         console.error('Error fetching entities:', error);
       });
-  }, [dispatch]);
-
-  // Handle window resize
-  useEffect(() => {
-    function handleResize() {
-      dispatch(setDimensions(window.innerWidth - 100, window.innerHeight));
-    }
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
   }, [dispatch]);
 
   // Handlers for adding, removing and editing entities

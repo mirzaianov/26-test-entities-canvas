@@ -1,7 +1,9 @@
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Stage, Layer, Group, Rect, Text } from 'react-konva';
 import { removeEntity } from '../redux/entities/actionCreators.js';
 import { setEditForm } from '../redux/editForm/actionCreators.js';
+import { setDimensions } from '../redux/canvas/actionCreators.js';
 
 const X_HEADING = 5;
 const Y_HEADING = 5;
@@ -43,6 +45,19 @@ const CanvasTable = () => {
       ),
     );
   };
+
+  // Handle window resize
+  useEffect(() => {
+    function handleResize() {
+      dispatch(setDimensions(window.innerWidth - 100, window.innerHeight));
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [dispatch]);
 
   return (
     <Stage
