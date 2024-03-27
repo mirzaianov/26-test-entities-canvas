@@ -36,17 +36,6 @@
         "labelC"
       ],
       "id": "ccdcc5d8-1d99-47aa-a8da-ec879e55a8a3"
-    },
-    {
-      "id": "99f5fbbc-b998-45af-a9c2-da49dfa733e2",
-      "name": "Entity4",
-      "coordinates": [
-        4,
-        4
-      ],
-      "labels": [
-        "labelD"
-      ]
     }
   ]
 }

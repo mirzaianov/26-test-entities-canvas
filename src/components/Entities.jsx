@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, Suspense, lazy } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import {
@@ -6,18 +6,23 @@ import {
   editEntity,
   clearEntity,
 } from '../redux/entities/actionCreators.js';
-import EditEntity from './EditEntity.jsx';
-import InputEntity from './InputEntity.jsx';
-import CanvasTable from './CanvasTable.jsx';
+// import EditEntity from './EditEntity.jsx';
+// import InputEntity from './InputEntity.jsx';
+// import CanvasTable from './CanvasTable.jsx';
 import { setFormInputs } from '../redux/formInputs/actionCreators.js';
 import { setEditForm } from '../redux/editForm/actionCreators.js';
+
+const EditEntity = lazy(() => import('./EditEntity.jsx'));
+const InputEntity = lazy(() => import('./InputEntity.jsx'));
+const CanvasTable = lazy(() => import('./CanvasTable.jsx'));
 
 const style = {
   entities: `flex flex-col justify-center gap-5 overflow-x-auto`,
   heading: `text-5xl font-bold m-auto`,
+  loading: `text-5xl font-bold`,
 };
 
-function EntitiesList() {
+function Entities() {
   const dispatch = useDispatch();
 
   const { name, coordinates, labels } = useSelector(
@@ -44,7 +49,6 @@ function EntitiesList() {
       });
   }, [dispatch]);
 
-  // Handlers for adding, removing and editing entities
   const handleCreate = (e) => {
     e.preventDefault();
 
@@ -106,7 +110,7 @@ function EntitiesList() {
   };
 
   return (
-    <>
+    <Suspense fallback={<h2 className={style.loading}>Loading...</h2>}>
       {isEdit ? (
         <EditEntity
           handleUpdate={handleUpdate}
@@ -119,8 +123,8 @@ function EntitiesList() {
           <CanvasTable />
         </div>
       )}
-    </>
+    </Suspense>
   );
 }
 
-export default EntitiesList;
+export default Entities;

@@ -20,7 +20,7 @@ const InputEntity = ({ handleCreate }) => {
 
   return (
     <>
-      <h2 className={style.subheading}>Add New Entity</h2>
+      <h1 className={style.subheading}>Add New Entity</h1>
       <form className={style.form}>
         <label className={style.label__container}>
           <div className={style.label__item}>
