@@ -19,7 +19,7 @@ const CanvasTable = lazy(() => import('./CanvasTable.jsx'));
 const style = {
   entities: `flex flex-col justify-center gap-5 overflow-x-auto`,
   heading: `text-5xl font-bold m-auto`,
-  loading: `text-5xl font-bold`,
+  loading: `text-4xl font-bold`,
 };
 
 function Entities() {

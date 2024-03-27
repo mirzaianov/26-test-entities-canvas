@@ -52,7 +52,7 @@ const EditEntity = ({ handleUpdate, handleClose }) => {
           <label className={style.label__container}>
             <div className={style.label__item}>
               <span className={style.label__text}>
-                Enter new coordinates (comma-separated)
+                Enter a new coordinate (comma-separated)
               </span>
             </div>
             <input
